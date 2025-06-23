@@ -9,7 +9,6 @@ from aiogram.types import Message#Объекты получены в Telegram, �
 from aiogram.enums import ParseMode#
 from aiogram.client.default import DefaultBotProperties#
 import aiohttp # Используем aiohttp для асинхронных HTTP-запросов
-from dotenv import load_dotenv
 import os
 
 logging.basicConfig(
@@ -24,7 +23,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 logger.info("Логирование настроено. Логи пишутся в %s", f"bot_{uuid.uuid4().hex[:6]}.log")
 
-load_dotenv()
+
 API_TOKEN = os.getenv('test_bot.bot_token')# Токен Telegram бота
 API_KEY = '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'  # API ключ OpenRouter
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
